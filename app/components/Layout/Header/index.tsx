@@ -3,8 +3,8 @@ import React from 'react'
 import BellSvg from "@/public/assets/svg/bell.svg"
 import AboutSvg from "@/public/assets/svg/question-circle.svg"
 import EmailSvg from "@/public/assets/svg/envelope.svg"
-import Image from 'next/image'
 import OpenSidebarButton from './openSidebarButton'
+import UserCard from './userCard'
 
 function Header() {
     return (
@@ -41,23 +41,9 @@ function Header() {
 
                 </div>
 
-                <button
-                    className='hidden md:flex items-center gap-2 bg-primary px-4 py-2'
-                    title='Open User Settings'
-                >
-
-                    <Image
-                        src="/assets/img/profile.jpg"
-                        width={36} height={36}
-                        alt='username'
-                        className='rounded-full'
-                    />
-
-                    <h5 className='line-clamp-1'>
-                        username
-                    </h5>
-
-                </button>
+                <UserCard
+                    customClassStyle='hidden md:flex items-center gap-2 bg-primary px-4 py-2'
+                />
 
             </div>
 

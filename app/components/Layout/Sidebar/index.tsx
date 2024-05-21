@@ -1,6 +1,5 @@
 "use client"
 import { useAppSelector } from '@/app/lib/Redux/hooks'
-import Image from 'next/image'
 import React from 'react'
 import DashboardSvg from "@/public/assets/svg/dashboard.svg"
 import UsersSvg from "@/public/assets/svg/people.svg"
@@ -8,6 +7,7 @@ import CommentsSvg from "@/public/assets/svg/chat-dots.svg"
 import ChartsSvg from "@/public/assets/svg/bar-chart.svg"
 import SettingsSvg from "@/public/assets/svg/gear-wide.svg"
 import NavItem from './navItem'
+import UserCard from '../Header/userCard'
 
 function Sidebar() {
 
@@ -18,23 +18,10 @@ function Sidebar() {
 
             <div>
 
-                <button
-                    className={`${sidebarState ? "flex" : "hidden"} items-center gap-2 bg-[#214162] px-8 py-4 w-full`}
-                    title='Open User Settings'
-                >
-
-                    <Image
-                        src="/assets/img/profile.jpg"
-                        width={56} height={56}
-                        alt='username'
-                        className='rounded-full'
-                    />
-
-                    <h5 className='line-clamp-1'>
-                        username
-                    </h5>
-
-                </button>
+                <UserCard
+                    customClassStyle={`${sidebarState ? "flex" : "hidden"} items-center gap-2 bg-[#214162] px-8 py-4 w-full`}
+                    onNavBar
+                />
 
             </div>
 
