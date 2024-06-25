@@ -3,7 +3,8 @@ import { useAppSelector } from '@/app/lib/Redux/hooks'
 import React from 'react'
 import DashboardSvg from "@/public/assets/svg/dashboard.svg"
 import UsersSvg from "@/public/assets/svg/people.svg"
-import CommentsSvg from "@/public/assets/svg/chat-dots.svg"
+import CodeBarSvg from "@/public/assets/svg/upc-scan.svg"
+import BoxSvg from "@/public/assets/svg/box-seam.svg"
 import ChartsSvg from "@/public/assets/svg/bar-chart.svg"
 import SettingsSvg from "@/public/assets/svg/gear-wide.svg"
 import NavItem from './navItem'
@@ -41,21 +42,34 @@ function Sidebar() {
                 <li>
                     <NavItem
                         title="Users"
+                        customSvg={<UsersSvg fill={"#d322ff"} className={"scale-125"} />}
+                        sidebarState={sidebarState}
+                    />
+                </li>
+                <li>
+                    <NavItem
+                        title="Customers"
                         customSvg={<UsersSvg fill={"#ff5722"} className={"scale-125"} />}
                         sidebarState={sidebarState}
                     />
                 </li>
                 <li>
                     <NavItem
-                        title="Comments"
-                        customSvg={<CommentsSvg fill={"#03a9f4"} className={"scale-125"} />}
+                        title="Products"
+                        customSvg={<CodeBarSvg fill={"#018f83"} className={"scale-125"} />}
+                        sidebarState={sidebarState}
+                    />
+                </li>
+                <li>
+                    <NavItem
+                        title="Orders"
+                        customSvg={<BoxSvg fill={"#03a9f4"} className={"scale-125"} />}
                         sidebarState={sidebarState}
                         hasCaret={[{
                             title: "Most Recents",
-                            route: "/comments"
+                            route: "/orders?sort=most_recents"
                         }]}
                     />
-
                 </li>
                 <li>
                     <NavItem
@@ -63,7 +77,6 @@ function Sidebar() {
                         customSvg={<ChartsSvg fill={"#018f83"} className={"scale-125"} />}
                         sidebarState={sidebarState}
                     />
-
                 </li>
                 <li>
                     <NavItem
