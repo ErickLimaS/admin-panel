@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Layout from "./components/Layout";
 import { getServerSession } from "next-auth"
-import StoreProvider from "./StoreProvider";
+import StoreProvider from "./lib/Redux/StoreProvider";
 import SessionProvider from "./components/SessionProvider";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -23,7 +23,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-background`}>
 
         <SessionProvider session={session}>
           <StoreProvider>
