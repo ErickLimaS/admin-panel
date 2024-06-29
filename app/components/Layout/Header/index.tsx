@@ -18,7 +18,7 @@ function Header() {
                     href={"/"}
                     className='block text-white'
                 >
-                    LOGO
+                    UNDER DEVELOPMENT
                 </Link>
 
             </div>
